@@ -12,14 +12,14 @@ void loop() {
   int pot = analogRead(Pin_Potenziometro); // 0-1023
   analogWrite(Pin_Motore, pot / 4); // 0-255
 
-  int Da = pulseIn(2, HIGH);
-  int Db = pulseIn(2, LOW);
+  double Da = pulseIn(2, HIGH);
+  double Db = pulseIn(2, LOW);
 
   // us
-  int P = (Da + Db) * 40;
-  int F = 1000000/P; 
+  double P = (Da + Db) * 40;
+  double F = 1000000/P; 
 
-  int RPM = F * 60;
+  double RPM = F * 60;
 
   Serial.println(RPM);
 
